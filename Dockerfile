@@ -1,24 +1,33 @@
-FROM golang:alpine as builder
+FROM golang:alpine
 
-RUN apk update && apk add --no-cache git
+# Set necessary environmet variables needed for our image
+ENV GO111MODULE=on \
+    CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=amd64
 
-WORKDIR /app
+# Move to working directory /build
+WORKDIR /build
 
-COPY go.mod go.sum ./
-
+# Copy and download dependency using go mod
+COPY go.mod .
+COPY go.sum .
 RUN go mod download
 
+# Copy the code into the container
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
+# Build the application
+RUN go build -o main .
 
-FROM alpine:latest
-RUN apk --no-cache add ca-certificates
+# Move to /dist directory as the place for resulting binary folder
+WORKDIR /dist
 
-WORKDIR /root/
+# Copy binary from build to main folder
+RUN cp /build/main .
 
-# COPY --from=builder /app/main .
-
+# Export necessary port
 EXPOSE 9091
 
-CMD ["./main"]
+# Command to run when starting the container
+CMD ["/dist/main"]

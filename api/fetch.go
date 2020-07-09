@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"sort"
 	"strconv"
 
@@ -15,7 +14,7 @@ func Fetch(c *gin.Context) {
 	offsetstring := c.Query("offset")
 
 	limit, err := strconv.Atoi(limitstring)
-	fmt.Println(err)
+
 	if err != nil {
 		c.JSON(400, "please provide interger value for 'limit' query parameter")
 	}
@@ -33,7 +32,7 @@ func Fetch(c *gin.Context) {
 		keys = append(keys, k)
 	}
 	sort.Ints(keys)
-	fmt.Println(CacheList.TodoItems)
+
 	for i, k := range keys {
 		if i+1 <= offset {
 			continue
