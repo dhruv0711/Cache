@@ -14,7 +14,7 @@ func main() {
 
 	r := gin.Default()
 	pprof.Register(r)
-	r.GET("/fetch", api.Fetch)
-	r.POST("/insert", api.Insert)
+	r.GET("/cache/fetch", api.Fetch)
+	r.POST("/cache/insert", api.Insert)
 	r.Run(":9091")
 }

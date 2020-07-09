@@ -12,5 +12,5 @@ func Insert(c *gin.Context) {
 
 	cache.InsertIntoCache(todo)
 
-	c.JSON(201, "inserted")
+	c.JSON(201, "Inserted Successfully")
 }
