@@ -25,10 +25,10 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+      - database-data:/var/lib/postgresql/data/ 
     networks:
       - nokia
-    
+
   rabbitmq:
     image: rabbitmq:3-management-alpine
     container_name: queue
@@ -45,7 +45,11 @@ volumes:
   rabbit1:
     driver: local
  
-# Networks to be created to facilitate communication between containers
+
 networks:
   nokia:
-    driver: bridge
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+              - subnet: 172.16.1.0/24
