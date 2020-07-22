@@ -1,5 +1,3 @@
-FROM postgres:alpine
-
 FROM golang:alpine
 
 # Set necessary environmet variables needed for our image
@@ -30,7 +28,7 @@ RUN cp /build/main .
 
 
 # Export necessary port
-EXPOSE 9091 5432
+EXPOSE 9091
 
 # Command to run when starting the container
 CMD ["/dist/main"]
