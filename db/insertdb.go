@@ -3,7 +3,7 @@ package db
 import (
 	"fmt"
 
-	"github.com/vpalahia/Cache/types"
+	"github.com/dhruv0711/Cache/types"
 )
 
 //InsertIntoDB function to insert into database

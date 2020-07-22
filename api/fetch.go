@@ -4,9 +4,9 @@ import (
 	"sort"
 	"strconv"
 
+	"github.com/dhruv0711/Cache/cache"
+	"github.com/dhruv0711/Cache/types"
 	"github.com/gin-gonic/gin"
-	"github.com/vpalahia/Cache/cache"
-	"github.com/vpalahia/Cache/types"
 )
 
 func Fetch(c *gin.Context) {

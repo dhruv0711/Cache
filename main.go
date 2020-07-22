@@ -3,10 +3,10 @@ package main
 import (
 	_ "net/http/pprof"
 
+	"github.com/dhruv0711/Cache/api"
+	"github.com/dhruv0711/Cache/cache"
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
-	"github.com/vpalahia/Cache/api"
-	"github.com/vpalahia/Cache/cache"
 )
 
 func main() {

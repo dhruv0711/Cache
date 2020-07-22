@@ -1,3 +1,5 @@
+FROM postgres:alpine
+
 FROM golang:alpine
 
 # Set necessary environmet variables needed for our image
@@ -26,8 +28,9 @@ WORKDIR /dist
 # Copy binary from build to main folder
 RUN cp /build/main .
 
+
 # Export necessary port
-EXPOSE 9091
+EXPOSE 9091 5432
 
 # Command to run when starting the container
 CMD ["/dist/main"]

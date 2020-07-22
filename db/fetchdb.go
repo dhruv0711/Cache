@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/dhruv0711/Cache/types"
 	"github.com/streadway/amqp"
-	"github.com/vpalahia/Cache/types"
 )
 
 //FetchFromDB function to fetch data from database

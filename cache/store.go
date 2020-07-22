@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"github.com/vpalahia/Cache/db"
-	"github.com/vpalahia/Cache/types"
+	"github.com/dhruv0711/Cache/db"
+	"github.com/dhruv0711/Cache/types"
 )
 
 type cache struct {

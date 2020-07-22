@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/dhruv0711/Cache/db"
+	"github.com/dhruv0711/Cache/types"
 	"github.com/streadway/amqp"
-	"github.com/vpalahia/Cache/db"
-	"github.com/vpalahia/Cache/types"
 )
 
 //InitializeCache function to initialize cache on server startup
