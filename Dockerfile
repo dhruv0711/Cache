@@ -14,7 +14,7 @@ COPY go.mod .
 COPY go.sum .
 RUN go mod download
 
-# Copy the code into the container
+# Copy the code into the container.
 COPY . .
 
 # Build the application
