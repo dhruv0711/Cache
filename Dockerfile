@@ -27,7 +27,7 @@ WORKDIR /dist
 RUN cp /build/main .
 
 
-# Export necessary port
+# Export necessary port..
 EXPOSE 9091
 
 # Command to run when starting the container.
