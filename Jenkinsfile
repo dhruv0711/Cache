@@ -13,7 +13,8 @@ pipeline {
             steps {
                echo "I said, Hello Mr. ${username}"
             }
-            stage('Example stage 3') {
+        }
+        stage('Example stage 3') {
             steps {
             echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
