@@ -7,15 +7,13 @@ pipeline {
         AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     }
+    parameters {
+        string(name: '13245', defaultValue: 'Hi', description: 'Desc')
+    }
     stages {
         stage('Example stage 1') {
             steps {
-                echo "Hello Mr. ${AWS_SECRET_ACCESS_KEY}"
-            }
-        }
-        stage('Example stage 2') {
-            steps {
-               echo "I said, Hello Mr. ${AWS_ACCESS_KEY_ID}"
+                echo "${params.13245} World!"
             }
         }
     }
